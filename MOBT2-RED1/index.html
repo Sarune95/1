@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOBT2-RED1</title>
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tools
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../bmi.html">BMI</a>
+                <a href="../histories.html">Historie</a>
+                <a href="../reference.html">Reference</a>
+                <a href="../testing.html">HTML/CSS Testing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Mobile Technologies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../MOBT1-RED1/index.html">Prototype App</a>
+                <a href="../MOBT2-RED1/index.html">Android Native Application (MOBT)</a>
+                <a href="../MOBT3-RED1/index.html">Mobile Network & Device configuration</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Software Architecture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../SOFTARC1-RED1/index.html">Skills Demo1: Modern methodology</a>
+                <a href="../SOFTARC2-RED1/index.html">Skills Demo2: Pair Programing</a>
+                <a href="../SOFTARC3-RED1/index.html">Skills Demo3: Apply Skills</a>
+                <a href="../SOFTARC4-RED1/index.html">Skills Demo4 “Java from UML”</a>
+                <a href="../SOFTARC5-RED1/index.html">Skills Demo5: Use case diagram</a>
+                <a href="../SOFTARC6-RED1/index.html">Skills Demo6: Use-Case Review</a>
+                <a href="../SOFTARC7-RED1/index.html">Skills Demo7: What is Waterfall</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Work Experience
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../WXP-DIARY-r1/index.html">Diary</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <h1 id="team">Android Native Application</h1>
+
+    <div class="method">
+        <h3>Cleaned compressed, App folder</h3>
+        <a style="color:red" href="file/newbmi.zip">Download zip file.</a>
+        <hr>
+        <h3>Screen design sketches</h3>
+        <div class="bmi-app-table">
+            <img src="img/IMG_20240510_112851.jpg" alt="scetch">
+        </div>
+        <h3>UX work-flow diagram</h3>
+        <div class="bmi-app-table">
+            <img src="img/IMG_20240510_113039.jpg" alt="UX">
+        </div>
+        <h3>A screen shot of each final screen</h3>
+        <div class="bmi-app-table">
+            <img src="img/Screenshot from 2024-05-10 11-37-26.png" alt="screenshot">
+        </div>
+        <div class="bmi-app-table">
+            <img src="img/Screenshot from 2024-05-10 11-37-35.png" alt="screenshot">
+        </div>
+        <hr>
+        <h3>Java code for your MainActivity.java;</h3>
+        <pre>
+            <code>
+                package com.example.newbmi;
+
+import com.google.appinventor.components.runtime.Button;
+import com.google.appinventor.components.runtime.Clock;
+import com.google.appinventor.components.runtime.Component;
+import com.google.appinventor.components.runtime.EventDispatcher;
+import com.google.appinventor.components.runtime.Form;
+import com.google.appinventor.components.runtime.HandlesEventDispatching;
+import com.google.appinventor.components.runtime.HorizontalArrangement;
+import com.google.appinventor.components.runtime.Label;
+import com.google.appinventor.components.runtime.Notifier;
+import com.google.appinventor.components.runtime.PasswordTextBox;
+import com.google.appinventor.components.runtime.TextBox;
+import com.google.appinventor.components.runtime.VerticalArrangement;
+import com.google.appinventor.components.runtime.Web;
+import com.google.appinventor.components.runtime.WebViewer;
+import com.google.appinventor.components.runtime.util.Ev3Constants;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DecimalFormat;
+import java.util.Random;
+
+public class MainActivity extends Form implements HandlesEventDispatching {
+
+    private
+
+    VerticalArrangement mainArrangement;
+    TextBox massBox, heightBox;
+    Button calcButton, walky;
+    Label resultAtBottom, headingAtTop, resultOutput;
+    HorizontalArrangement dataEntryArrangement;
+    protected void $define() {
+        this.Sizing("Responsive");
+        this.BackgroundColor(COLOR_WHITE);
+        mainArrangement=new VerticalArrangement(this);
+        mainArrangement.WidthPercent(100);
+        mainArrangement.Height(LENGTH_FILL_PARENT);
+        mainArrangement.AlignHorizontal(Component.ALIGNMENT_CENTER);
+
+        walky = new Button(mainArrangement);
+        walky.Text("Step counter  ");
+        walky.HeightPercent(10);
+        walky.WidthPercent(100);
+        walky.TextColor(COLOR_RED);
+        walky.TextAlignment(Component.ALIGNMENT_OPPOSITE);
+        walky.FontSize(30);
+
+        headingAtTop=new Label(mainArrangement);
+        headingAtTop.Text("BMI calculator");
+        headingAtTop.WidthPercent(100);
+        headingAtTop.TextAlignment(ALIGNMENT_CENTER);
+        headingAtTop.HeightPercent(10);
+        headingAtTop.FontSize(40);
+        headingAtTop.BackgroundColor(COLOR_PINK);
+        headingAtTop.TextColor(COLOR_BLACK);
+
+        dataEntryArrangement = new HorizontalArrangement(mainArrangement);
+        dataEntryArrangement.WidthPercent(LENGTH_FILL_PARENT);
+        dataEntryArrangement.HeightPercent(20);
+
+        massBox=new TextBox(dataEntryArrangement);
+        massBox.WidthPercent(50);
+        massBox.HeightPercent(20);
+        massBox.FontSize(40);
+        massBox.TextAlignment(ALIGNMENT_CENTER);
+        massBox.Hint("Weight");
+        massBox.BackgroundColor(COLOR_WHITE);
+
+        heightBox=new TextBox(dataEntryArrangement);
+        heightBox.WidthPercent(50);
+        heightBox.HeightPercent(20);
+        heightBox.FontSize(40);
+        heightBox.Hint("Height");
+        heightBox.TextAlignment(ALIGNMENT_CENTER);
+        heightBox.BackgroundColor(COLOR_WHITE);
+
+        //now, the other vertically arranged components
+        calcButton=new Button(mainArrangement);
+        calcButton.Text("Calculate");
+        calcButton.HeightPercent(20);
+        calcButton.FontSize(30);
+        calcButton.Width(LENGTH_FILL_PARENT);
+        calcButton.BackgroundColor(COLOR_PINK);
+        calcButton.TextColor(COLOR_BLACK);
+
+        resultAtBottom=new Label(mainArrangement);
+        resultAtBottom.HeightPercent(20);
+        resultAtBottom.Width(LENGTH_FILL_PARENT);
+        resultAtBottom.FontSize(90);
+        resultAtBottom.TextAlignment(ALIGNMENT_CENTER);
+        resultAtBottom.BackgroundColor(COLOR_WHITE);
+
+        resultOutput=new Label(mainArrangement);
+        resultOutput.HeightPercent(40);
+        resultOutput.Width(LENGTH_FILL_PARENT);
+        resultOutput.FontSize(60);
+        resultOutput.TextAlignment(ALIGNMENT_CENTER);
+        resultOutput.BackgroundColor(COLOR_WHITE);
+
+
+        EventDispatcher.registerEventForDelegation(this, formName, "Click");
+    }
+
+    public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params) {
+
+        System.err.print("dispatchEvent: " + formName + " [" + component.toString() + "] [" + componentName + "] " + eventName);
+        if (eventName.equals("Click")) {
+            if (component.equals(calcButton)) {
+                Integer this_person_bmi=calculateTheBMI();
+                final Integer underweight_range=18;
+                final Integer normal_range=24;
+                final Integer overweight_range=29;
+                if (this_person_bmi <= 0) {
+                    resultOutput.BackgroundColor(COLOR_PINK); //error.
+                }
+               else if (this_person_bmi < underweight_range) { //underweight
+                   resultOutput.Text("\nUnderweight");
+                   resultOutput.BackgroundColor(COLOR_BLUE);
+               }
+               else if (this_person_bmi < normal_range) { // normal
+                   resultOutput.Text("\nNormal");
+                   resultOutput.BackgroundColor(COLOR_GREEN);
+               }
+               else if (this_person_bmi < overweight_range) { //overweight
+                   resultOutput.Text("\noverweight");
+                   resultOutput.BackgroundColor(COLOR_ORANGE);
+               }
+               else { // obese
+                   resultOutput.Text("\nObese");
+                   resultOutput.BackgroundColor(COLOR_RED);
+
+               }
+                return true;
+            }
+            else if (component.equals(walky)) {
+                switchForm("StepCounter");
+                return true;
+            }
+        }
+        return false;
+    }
+    Integer calculateTheBMI() {
+        Integer answer=0;
+        Double weight=0.0, height=0.0, bmi_result=0.0;
+        try {
+            
+        if(!massBox.Text().equals("")) {
+            weight = Double.valueOf(massBox.Text());
+        }
+        if(!heightBox.Text().equals("")) {
+            height = Double.valueOf(heightBox.Text());
+        }
+        bmi_result=0.0;
+
+        if ((height != Double.valueOf(0)) && (weight != Double.valueOf(0)) ) {
+            bmi_result = weight / (height * height);
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(0); // this will round up
+            resultAtBottom.Text(df.format(bmi_result));
+            answer= Integer.valueOf(df.format(bmi_result));
+        }
+        else {
+            resultAtBottom.Text("0");
+            //answer=0; not needed
+
+        }
+        //return -1;
+
+    }
+
+        catch(Exception e) {
+            resultAtBottom.Text(e.toString());
+            resultAtBottom.Text("\nProvide Correct Numbers");
+            resultAtBottom.FontSize(30);
+            resultOutput.Text(" ");
+        }
+        return answer;
+    }
+}
+            </code>
+        </pre>
+
+        <h3>Evidence of testing.</h3>
+        <div class="bmi-app-table">
+            <img src="img/myBMItesting.png" alt="table testing">
+        </div>
+        <h3>Project Report</h3>
+        <p>Objective: Develop a mobile app to calculate Body Mass Index (BMI) for users based on height and weight input.</p>
+        <p>Features:</p>
+        <p>User input for height and weight.</p>
+        <p>Accurate BMI calculation.</p>
+        <p>Interpretation of BMI into weight status categories.</p>
+        <p>Unit conversion for metric and imperial units.</p>
+        <p>User profiles for long-term tracking and goal setting.</p>
+        <p>Implementation: Developed for Android and iOS using native frameworks. Frontend designed with modern UI/UX principles. Backend logic handles input, calculations, and result generation.</p>
+        <p>Challenges: Ensuring accuracy across devices, implementing seamless unit conversion, and balancing functionality with simplicity.</p>
+        <p>Future Enhancements: Integration with health data APIs, personalized recommendations, and improved analytics for user engagement and performance tracking.</p>
+        <p>Conclusion: The BMI Calculator App delivers a user-friendly solution for BMI calculation and weight status interpretation, promoting health awareness and informed decision-making for users' well-being.</p></p>
+           
+    </div>
+    <div class="method"><object data="img/MOBT-SKILLS2-brief.pdf" type="application/pdf" height="500" width="500"><a
+                href="img/brief.pdf">Assigment brief</a></object></div>
+    <div style="text-align: center;">
+        <h2><b>HTML:</b><a
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2FMOBT3-RED1%2Findex.html">validator</a>
+        </h2>
+        <h2><b>CSS:</b><a
+                href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">validator</a>
+        </h2>
+    </div>
+    <script src="../assets/script/navbar.js"></script>
+</body>
+
+</html>

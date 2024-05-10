@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <title>bmi</title>
+    <script>
+
+        function calc() {
+            let answerbox = document.getElementById("answerbox");
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+            let answer = weight / (height * height);
+            answer = -1;
+            if ((weight != 0) || (height != 0)) {
+                result = weight / (height * height);
+            }
+            document.getElementById("resultbmi").value = result;
+
+
+            if (result == -1) {
+                answerbox.innerHTML = "Error";
+
+            }
+            else if (result < 18.5) {
+                answerbox.innerHTML = "Underweight";
+                document.getElementById("answerbox")
+                    .style.backgroundColor = "blue";
+            }
+            else if (result < 24.9) {
+                answerbox.innerHTML = "Normal";
+                document.getElementById("answerbox")
+                    .style.backgroundColor = "green";
+            }
+            else if (result < 29.9) {
+                answerbox.innerHTML = "Overweight";
+                document.getElementById("answerbox")
+                    .style.backgroundColor = "orange";
+            }
+            else {
+                answerbox.innerHTML = "Obese";
+                document.getElementById("answerbox")
+                    .style.backgroundColor = "red";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tools
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="bmi.html">BMI</a>
+                <a href="histories.html">Historie</a>
+                <a href="reference.html">Reference</a>
+                <a href="testing.html">HTML/CSS Testing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Mobile Technologies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="MOBT1-RED1/index.html">Prototype App</a>
+                <a href="MOBT2-RED1/index.html">Android Native Application (MOBT)</a>
+                <a href="MOBT3-RED1/index.html">Mobile Network & Device configuration</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Software Architecture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="SOFTARC1-RED1/index.html">Skills Demo1: Modern methodology</a>
+                <a href="SOFTARC2-RED1/index.html">Skills Demo2: Pair Programing</a>
+                <a href="SOFTARC3-RED1/index.html">Skills Demo3: Apply Skills</a>
+                <a href="SOFTARC4-RED1/index.html">Skills Demo4 “Java from UML”</a>
+                <a href="SOFTARC5-RED1/index.html">Skills Demo5: Use case diagram</a>
+                <a href="SOFTARC6-RED1/index.html">Skills Demo6: Use-Case Review</a>
+                <a href="SOFTARC7-RED1/index.html">Skills Demo7: What is Waterfall</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Work Experience
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="WXP-DIARY-r1/index.html">Diary</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <h1 class="bmi-center">BMI</h1>
+    <div class="bmi-center">
+        <h1>Body Mass Index Calculator</h1>
+        <p>Discover your body mass index by entering your height and weight.</p>
+        <div class="bmi-split">
+            <div class="bmi-split-left"><input type="text" class="hover" id="weight" placeholder="Weight in kg"></div>
+            <div class="bmi-split-right"><input type="text" class="hover" id="height" placeholder="Height in m"></div>
+        </div>
+        <div class="bmi-content"><button type="button" id="butn" onclick="calc()">Calculate</button></div>
+        <div class="bmi-content"><input type="text" class="hover" id="resultbmi" placeholder="Your Answer"></div>
+        <div class="bmi-content" id="answerbox">Conclusion of your BMI result:</div>
+        <img class="bmi-pic-size" id="bmi-pic" src="assets/images/bmi-chart.png" alt="bmi-weight chart">
+    </div>
+    <div style="text-align: center;">
+        <h2><b>HTML:</b><a
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2Fbmi.html">validator</a>
+        </h2>
+        <h2><b>CSS:</b><a
+                href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">validator</a>
+        </h2>
+    </div>
+    <script src="assets/script/navbar.js"></script>
+</body>
+
+</html>

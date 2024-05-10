@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFTARC5-RED1</title>
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tools
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../bmi.html">BMI</a>
+                <a href="../histories.html">Historie</a>
+                <a href="../reference.html">Reference</a>
+                <a href="../testing.html">HTML/CSS Testing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Mobile Technologies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../MOBT1-RED1/index.html">Prototype App</a>
+                <a href="../MOBT2-RED1/index.html">Android Native Application (MOBT)</a>
+                <a href="../MOBT3-RED1/index.html">Mobile Network & Device configuration</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Software Architecture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../SOFTARC1-RED1/index.html">Skills Demo1: Modern methodology</a>
+                <a href="../SOFTARC2-RED1/index.html">Skills Demo2: Pair Programing</a>
+                <a href="../SOFTARC3-RED1/index.html">Skills Demo3: Apply Skills</a>
+                <a href="../SOFTARC4-RED1/index.html">Skills Demo4 “Java from UML”</a>
+                <a href="../SOFTARC5-RED1/index.html">Skills Demo5: Use case diagram</a>
+                <a href="../SOFTARC6-RED1/index.html">Skills Demo6: Use-Case Review</a>
+                <a href="../SOFTARC7-RED1/index.html">Skills Demo7: What is Waterfall</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Work Experience
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../WXP-DIARY-r1/index.html">Diary</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <h1 id="team">Use-case-diagram</h1>
+    <div class="method">
+        <h3>What is a use-case</h3>
+        <p>UML short for Unified Modeling Language consisting of an integrated set of diagrams. A use case explains how users interact with a product or system. Use case outlines the flow of the user inputs, establishing successful and failed paths to meething the wanted goals. It allows us to better understand what the system does, why do we get errors and how does the system perform.</p>
+        <div class="bmi-app-table"><img src="img/use-case.jpeg" alt="use case"></div>
+        <hr>
+        <h3>Elements that may be represented in a UML use-case diagram includes such as actors that the system interacts with, the system itself, the use cases or services that the system knows hot to perform and the lines that represent relationship between these elements.</h3>
+        <br>
+        <h3>Actors</h3>
+        <p>Actors can be people, other systems, time triggers and event triggers. They are typically external objects of the system that produce the data:</p>
+        <p>Must serve as sources and destinations for data.</p>
+        <p>Must be external to the system.</p>
+        <div class="bmi-app-table"><img src="img/use-case-actors.png" alt="use case actors"></div>
+        <hr>
+        <h3>Use-case</h3>
+        <p>A use-case is a methodology used in system analysis to identify, clarify and organize system requirements. Few examples of use case are:</p>
+        <p>An airlines online booking system.</p>
+        <p>BMI app health tracker calculator.</p>
+        <p>A food delivery service mobile app.</p>
+        <p>A ticket sales platform.</p>
+        <div class="bmi-app-table"><img src="img/use-case-actor.png" alt="simple use case diagram "></div>
+        <hr>
+        <h3>System boundary</h3>
+        <p>Its a rectangle that you can draw in a use-case diagram to seperate the use cases that are internal to a system from the actors that are external to the system. The system boundaries represent the diagrams parent package and are used to visually group related elements together.</p>
+        <div class="bmi-app-table"><img src="img/use case border.png" alt="simple use case diagram border "></div>
+        <hr>
+        <h3>The relationship between the different elements, the differences between them and enumerate them from our system</h3>
+        <p>Use cases in UML diagrams demonstrate various relationships, typically representing dependencies between them. The modeler decides how two use cases are related, which can lead to reusing existing use cases, reducing effort in system definition. This reuse through relationships extends to other UML diagrams.</p>
+        <br>
+        <p>Include relationship</p>
+        <p>An include relationship in a use case diagram signifies that one use case incorporates the functionality of another within its business process flow. Shown by a directed arrow with a dotted shaft, the arrowhead points to the included use case, while the base connects to the including use case. The included use case cannot function independently. </p>
+        <div><img src="img/include-relationship.gif" alt="include use case relationship"></div>
+        <p>Extend relationship</p>
+        <p>An extend relationship in a use case diagram signifies that a child use case enchances the functionality of the parent use case. Shown by the arrow with dotted shaft, resembling the include relationship, the arrowhead points to the parent use case, while the base connects to the extending use case.</p>
+        <div><img src="img/extend.gif" alt="extend use case relationship"></div>
+        <p>Generalization relationship</p>
+        <p>A generalization relationship in a use case diagram establishes a pernt and a child relationship between use cases, where the child use case enchances the underlying bussiness process of the parent. Shown by a directed arrow with a triangle arrowhead, the arrow base connects to the child use case while the tip connects to the parent use case as shown below.</p>
+        <div><img src="img/generalization relationship.gif" alt="generalization use case relationship"></div>
+        <hr>
+        <h3>Fully completed use case diagram shown below.</h3>
+        <div class="bmi-app"><img src="img/Use-case-diagram-for-the-obesity-management-application.png" alt="simple use case diagram system boundaries "></div>
+        <hr>
+    </div>
+    <div class="method"><object data="img/SOFTARC-SKILLS5-brief.pdf" type="application/pdf" height="500" width="500"><a
+                    href="img/brief.pdf">Assigment brief</a></object></div>
+    <div style="text-align: center;">
+        <h2><b>HTML:</b><a
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2FSOFTARC6-RED1%2Findex.html">validator</a>
+        </h2>
+        <h2><b>CSS:</b><a
+                href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">validator</a>
+        </h2>
+    </div>
+    <script src="../assets/script/navbar.js"></script>
+</body>
+
+</html>

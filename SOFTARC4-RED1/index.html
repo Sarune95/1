@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFTARC4-RED1</title>
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tools
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../bmi.html">BMI</a>
+                <a href="../histories.html">Historie</a>
+                <a href="../reference.html">Reference</a>
+                <a href="../testing.html">HTML/CSS Testing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Mobile Technologies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../MOBT1-RED1/index.html">Prototype App</a>
+                <a href="../MOBT2-RED1/index.html">Android Native Application (MOBT)</a>
+                <a href="../MOBT3-RED1/index.html">Mobile Network & Device configuration</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Software Architecture
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../SOFTARC1-RED1/index.html">Skills Demo1: Modern methodology</a>
+                <a href="../SOFTARC2-RED1/index.html">Skills Demo2: Pair Programing</a>
+                <a href="../SOFTARC3-RED1/index.html">Skills Demo3: Apply Skills</a>
+                <a href="../SOFTARC4-RED1/index.html">Skills Demo4 “Java from UML”</a>
+                <a href="../SOFTARC5-RED1/index.html">Skills Demo5: Use case diagram</a>
+                <a href="../SOFTARC6-RED1/index.html">Skills Demo6: Use-Case Review</a>
+                <a href="../SOFTARC7-RED1/index.html">Skills Demo7: What is Waterfall</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Work Experience
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../WXP-DIARY-r1/index.html">Diary</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <h1 id="team">Java from UML</h1>
+    <div class="method">
+        <div class="bmi-app-table">
+            <img src="img/uml-diagram.png" alt="UML diagram">
+        </div>
+        <hr>
+
+        <pre>
+            <code  class="pre-code">    
+         class Temperature
+        {
+            //Converting formula
+            public static double CalculateCelsiusToFahrenheit(double celsius)
+            {
+                return (celsius * 9 / 5) + 32;
+            }
+            public static double CalculateFahrenheitToCelsius(double fahrenheit)
+            {
+                return (fahrenheit - 32) * 5 / 9;
+            }
+        }
+        </code>
+        </pre>
+
+
+        <hr>
+        <pre>
+        <code class="pre-code">
+            class Program
+{
+    static void Main(string[] args)
+    {
+        //Main structure of the app
+        bool convert = true;
+        string? tryAgain;
+
+        Console.WriteLine("\n\n-------- Welcome to the Temperature Conversion app --------");
+
+        while (convert)
+        {
+            Console.WriteLine("\n         Please choose an option what to convert         ");
+            Console.WriteLine("\n-----     Press No. 1 For Celsius to Fahrenheit     -----");
+            Console.WriteLine("-----     Press No. 2 For Fahrenheit to Celsius     -----"); 
+        
+        while(true)
+        {
+            int choice = Convert.ToInt32(Console.ReadLine());
+            double result;
+            Console.Write("Enter temperature\n");
+            double input = Convert.ToDouble(Console.ReadLine());
+
+            if (choice == 1)
+            {
+
+                result = Temperature.CalculateCelsiusToFahrenheit(input);
+                Console.WriteLine($"\n{input} Celsius is equal to {result} Fahrenheit.");
+                break;
+            }
+            else if (choice == 2)
+            {
+                result = Temperature.CalculateFahrenheitToCelsius(input);
+                Console.WriteLine($"\n{input} Fahrenheit is equal to {result} Celsius.");
+                break;
+            } 
+        }   
+        //Try again option
+            Console.WriteLine("Would you like to convert again (y/n)");
+                tryAgain = Console.ReadLine();
+                if (tryAgain == "y")
+                {
+                  convert = true;
+                }
+                else if (tryAgain == "n")
+                {
+                    convert = false;
+                }  
+        }
+        
+        Console.WriteLine("Thank you for converting");
+        Console.ReadKey();
+    }
+}
+        </code>
+    </pre>
+    </div>
+    <br>
+    <hr>
+    <div class="method"><object data="img/brief.pdf" type="application/pdf" height="500" width="500"><a
+                href="img/brief.pdf">Assigment brief</a></object></div>
+    <div style="text-align: center;">
+        <h2><b>HTML:</b><a
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2FSOFTARC4-RED1%2Findex.html">validator</a>
+        </h2>
+        <h2><b>CSS:</b><a
+                href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ft.fachtnaroe.net%2Fred%2F1%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">validator</a>
+        </h2>
+    </div>
+    <script src="../assets/script/navbar.js"></script>
+</body>
+
+</html>
